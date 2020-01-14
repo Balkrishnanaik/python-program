@@ -1,0 +1,88 @@
+import time
+import random
+cards=[]
+cvvs=[]
+card=int(input("Enter 10 Digit Card Number:\n"))
+k=int(input("Enter cvv:\n"))
+cards.append(card)
+cvvs.append(k)
+af=str(k)
+cvv=len(af)
+st=str(card)
+cardnumber=len(st)
+print("Veryfing Card number")
+if cardnumber==10:
+    if cvv==3:
+        time.sleep(2)
+        print("Veryfied successfully")
+        time.sleep(0.5)
+        print("checking cvv")
+        time.sleep(0.5)
+        print("Checking service.........")
+        time.sleep(1)
+        print("ATM card is Activeted")
+        print("please set your password")
+        s=int(input("enter new password:"))
+        g=int(input("confirm new password:"))
+        print("Veryfing password")
+        time.sleep(1)
+        if s==g:
+            print("Password created")
+            balance=random.randint(10000,10000000000)
+            time.sleep(0.5)
+            print("1.Withdraw\n2.check balance\n")
+            a=int(input("enter choice number"))
+            print("\nchecking id...")
+            time.sleep(2)
+            if a>0:
+                if a<3:
+                    if a==1:
+                        print("access granted")
+                        b=int(input("enter password:"))
+                        print("checking password...\nplease wait.....")
+                        time.sleep(3)
+                        if b==g:
+                            print("correct password")
+                            print("your current balance is:",balance)
+                            c=int(input("enter ammount to withdraw: "))
+                            if c<=balance:
+                                print("withdrawing please wait")
+                                time.sleep(2)
+                                print("take your money")
+                                time.sleep(1)
+                                d=balance-c
+                                print("checking your remaining balance")
+                                time.sleep(2)
+                                print("\nyour remaining balance is :",d)
+                                print("\nthanks for using ATM")
+                            else:
+                                print("please enter ammount less than balance")
+                        else:
+                            try:
+                                print("wrong password")
+                                q=open("password.txt","a")
+                                q.Append(st)
+                            except:
+                                print("error")
+                            print("your card number is:",card)
+                            print("your cvv is:",k)
+                    else:
+                        if a==2:
+                            print("checking your balance")
+                            print("loading Data please wait...")
+                            time.sleep(5)
+                            print("your balance is:",balance)
+                else:
+                    print("invalid choice")
+            else:
+                print("invalid choice")
+        else:
+            print("password doesn't match")
+    else:
+        time.sleep(2)
+        print("Checking cvv")
+        time.sleep(2)
+        print("Invalid cvv")
+else:
+    time.sleep(2)
+    print("Invalid card number")
