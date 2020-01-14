@@ -61,7 +61,7 @@ if cardnumber==10:
                             try:
                                 print("wrong password")
                                 q=open("password.txt","a")
-                                q.Append(st)
+                                Print("q.read())
                             except:
                                 print("error")
                             print("your card number is:",card)
