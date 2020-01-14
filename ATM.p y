@@ -60,8 +60,6 @@ if cardnumber==10:
                         else:
                             try:
                                 print("wrong password")
-                                q=open("password.txt","a")
-                                Print("q.read())
                             except:
                                 print("error")
                             print("your card number is:",card)
